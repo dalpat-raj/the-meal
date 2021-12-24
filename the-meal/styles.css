@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(251, 245, 234);
+    /* background-color: rgba(27, 27, 27, 0.9); */
     scroll-behavior: smooth;
 }
 .header{
@@ -59,16 +59,6 @@ ul li a:hover{
 .search:focus{
     border: 1px solid black;
 }
-
- /* **********  toggle class *******   */
-.hide{
-     visibility: hidden;
- }
- .active{
-     visibility: visible;
- }
-
-  /* ********************** rendom meal  */
 .main{
     max-width: 90%;
     display: flex;
@@ -83,6 +73,94 @@ ul li a:hover{
     border-top: 1px solid black;
     overflow: scroll;
 }
+
+/* **************    seconddd   ************** */
+.second{
+    width: 90%;
+    background-color: slategray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    padding-top: 50px;
+    position: relative;
+    /* overflow: hidden; */
+}
+.intext{
+    position: absolute;
+    /* color: black; */
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+.needed{
+    text-align: center;
+}
+
+.rendom_img{
+    width: 30%;
+    /* height: 250px; */
+    min-width: 170px;
+    min-height: 170px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: thistle;
+    box-shadow: 10px 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+
+.rendom_desc{
+    background-color: thistle;
+    width: 30%;
+    min-width: 170px;
+    min-height: 170px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+.rendom_desc ul{
+    background-color: turquoise;
+}
+.rendom_video{
+    width: 28%;
+    min-height: 170px;
+    min-width: 170px;
+    background-color: thistle;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 1px 1px rgba(0, 0, 0, 0.5);
+}
+IFRAME{
+    width: 100%;
+}
+.next_btn{
+    position: absolute;
+    width: 10%;
+    min-width: 60px;
+    background-color: tomato;
+    bottom: 20px;
+    right: 20px;
+    margin-top: 10px;
+}
+
+ /* **********  toggle class *******   */
+.hide{
+     visibility: hidden;
+ }
+ .active{
+     visibility: visible;
+ }
+
 
 /* **************  java html ************* */
 .dataa{
@@ -120,8 +198,74 @@ img{
     background-color: rgb(162, 114, 207);
 }
 
+                 /* second */
+
+
+/* **************  footer  ************ */
+.footer_baar{
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding-top: 6px;
+}
+
+small{
+    margin-right: 20px;
+    color: silver;
+}
+.copyright_text{
+    color: #fff;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+.email_text{
+    margin-top: 7px;
+    padding-top: 10px;
+    color: #fff;
+}
+
 /* *****************   media query  *************** */
-@media(max-width:600px){
+@media(max-width:422px){
+    .rendom_img{
+        width: 100%;
+        margin-top: 50px;
+    }
+    
+    .rendom_desc{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .rendom_video{
+        width: 100%;
+        margin-top: 15px;
+    }
+    IFRAME{
+        width: 100%;
+    }
+}
+ 
+@media(max-width:650px){
+    .rendom_img{
+        min-width: 50px;
+        margin-top: 50px;
+    }
+    
+    .rendom_desc{
+        min-width: 50px;
+        margin-top: 15px;
+    }
+    .rendom_video{
+        min-width: 50px;
+        margin-top: 15px;
+    }
+    IFRAME{
+        width: 100%;
+    }
+} 
+
+@media(max-width:752px){
     .header{
         visibility: hidden;
         display: flex;
@@ -130,7 +274,7 @@ img{
     .headerrr{
         visibility: visible;
         width: 50%;
-        height: 60vh;
+        height: 50vh;
         flex-wrap: wrap;
         background-color: #f5c5cc;
         border-radius: 20px;

@@ -1,4 +1,5 @@
 const mainn = document.querySelector('.main');
+const secondd = document.querySelector('.second')
 const formm = document.getElementById('formm');
 const search = document.getElementById('search');
 const id_select = document.getElementById('id_select');
@@ -6,6 +7,45 @@ const go_back = document.querySelector('.go_back');
 const menu_btn = document.getElementById('menu_btn');
 const headerr = document.querySelector('.header');
 
+document.getElementById('click',(e)=>{
+    e.preventDefault();
+    console.log(raj);
+})
+
+
+getrendomm();
+
+function getrendomm(){
+fetch('https://www.themealdb.com/api/json/v1/1/random.php').then((resp)=>{
+    return resp.json();
+}).then((data)=>{
+    getrandmeal(data.meals[0]);
+})
+}
+
+function getrandmeal(meal){
+    let myarray = [];
+        for(var i=1; i<20; i++){
+            if(meal[`strIngredient${i}`]){
+                myarray.push(`${meal[`strIngredient${i}`]} ---- ${meal[`strMeasure${i}`]}`)
+            }else{
+                break ;
+            }
+        }
+    secondd.innerHTML = ` <h1 class="intext">Today Make This Recipe</h1>
+    <button class="btn next_btn" onclick="{getrendomm()}">next</button>
+    <div class="rendom_img"><h2 class="needed">${meal.strMeal}</h2>
+    <img src="${meal.strMealThumb}"/ id="rendom_img">
+    </div>
+    <div class="rendom_desc"> <h2 class="needed">You Needed</h2>
+    ${myarray.map(datata =>`
+    <li>.  ${datata}</li>
+    `).join(' ')}
+    </div>
+    <div class="rendom_video"><h2 class="needed">How to making</h2>
+    <IFRAME src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}"/>
+    </div>`;
+    }
 
 menu_btn.addEventListener('click',()=>{
     headerr.classList.toggle('headerrr')
